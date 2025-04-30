@@ -19,7 +19,7 @@ import com.demo.mvvmsample.screens.Setting.SettingScreen
 fun NavigationHelper(mainActivity: MainActivity) {
     val navController = rememberNavController()
 
-    val loginViewModel:LoginViewModel = viewModel()
+    //val loginViewModel:LoginViewModel = viewModel()
     NavHost(navController = navController, startDestination = Login) {
         composable<Home> {
             HomeScreen()// { screen -> navigateTo(screen, navController) }
@@ -28,7 +28,7 @@ fun NavigationHelper(mainActivity: MainActivity) {
         composable<Login> {
             LoginScreen(
                 //navigateTo = { screen -> navigateTo(screen, navController) },
-                viewModel = loginViewModel
+                //viewModel = loginViewModel
             )
 
         }
