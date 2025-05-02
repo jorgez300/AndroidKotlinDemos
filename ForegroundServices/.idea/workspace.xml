@@ -83,6 +83,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Android App.app.executor": "Debug",
+    "PROJECT_TRUSTED_KEY": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
@@ -99,6 +100,7 @@
       <recent name="H:\Repos\AndroidKotlinDemos\ForegroundServices\app\src\main\java\com\demo\foregroundservices" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.demo.foregroundservices.service" />
       <recent name="com.demo.foregroundservices" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
@@ -195,12 +197,12 @@
       <map>
         <entry key="com.demo.foregroundservices">
           <value>
-            <CheckInfo lastCheckTimestamp="1746127266257" />
+            <CheckInfo lastCheckTimestamp="1746218782514" />
           </value>
         </entry>
         <entry key="com.demo.foregroundservices.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1746127266257" />
+            <CheckInfo lastCheckTimestamp="1746218782513" />
           </value>
         </entry>
       </map>

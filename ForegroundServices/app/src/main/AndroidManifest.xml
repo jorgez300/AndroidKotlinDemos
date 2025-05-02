@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <service
-            android:name=".backgroundservice.BackService"
+            android:name=".backgroundservice.LocationForegroundService"
             android:foregroundServiceType="location"
             android:exported="false">
         </service>

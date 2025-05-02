@@ -13,16 +13,14 @@ import com.google.android.gms.location.*
 
 
 class LocationHelper {
-    constructor(activity: Context) {
-        this.activity = activity
-        fusedLocationClient =
-            LocationServices.getFusedLocationProviderClient(this.activity)
+    constructor() {
+
     }
 
-    private val activity: Context;
+    //private val activity: Context;
     private val TAG = "GPSHelper"
 
-    private val fusedLocationClient: FusedLocationProviderClient;
+    private lateinit var fusedLocationClient: FusedLocationProviderClient;
 
     private var _tarea: (latitude: Double, longitude: Double, speed: Float) -> Unit =
         { latitude, longitude, speed ->
@@ -51,10 +49,14 @@ class LocationHelper {
 
     @SuppressLint("MissingPermission")
     fun startLocationUpdates(
-        Tarea: (latitude: Double, longitude: Double, speed: Float) -> Unit = _tarea
+        context: Context,
+        tarea: (latitude: Double, longitude: Double, speed: Float) -> Unit = _tarea
     ) {
 
-        _tarea = Tarea
+        fusedLocationClient =
+            LocationServices.getFusedLocationProviderClient(context)
+
+        _tarea = tarea
         val locationRequest = LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 1000)
             .setMinUpdateIntervalMillis(1000)
             //.setMaxUpdateDelayMillis(20000)
@@ -79,18 +81,18 @@ class LocationHelper {
         fusedLocationClient.removeLocationUpdates(locationCallback)
     }
 
-    fun isGPSEnabled() {
+    fun isGPSEnabled(context: Context) {
         var enabled = true
         try {
             val locationManager =
-                this.activity.getSystemService(Context.LOCATION_SERVICE) as? LocationManager
+                context.getSystemService(Context.LOCATION_SERVICE) as? LocationManager
             enabled = locationManager?.isProviderEnabled(LocationManager.GPS_PROVIDER) ?: false
         } catch (e: Exception) {
             enabled = false
         }
 
         if (!enabled) {
-            openGPSSettings(this.activity)
+            openGPSSettings(context)
         }
 
     }

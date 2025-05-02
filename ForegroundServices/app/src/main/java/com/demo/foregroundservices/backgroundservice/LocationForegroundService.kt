@@ -5,7 +5,6 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.Service
 import android.content.Intent
-import android.os.Build
 import android.os.IBinder
 import android.util.Log
 import androidx.core.app.NotificationCompat
@@ -13,15 +12,16 @@ import com.demo.foregroundservices.Graph
 import com.demo.foregroundservices.MainActivity
 import com.demo.foregroundservices.R
 import com.demo.foregroundservices.core.LocationHelper
+import com.demo.foregroundservices.model.Location
+import com.demo.foregroundservices.service.LocationService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
-class BackService : Service() {
+class LocationForegroundService : Service() {
 
     private val TAG = "BackService"
 
@@ -65,12 +65,20 @@ class BackService : Service() {
                 "BackService ${getCurrentDateTimeString()}: ${latitude} ${longitude}, ${speed}"
             )
 
+
+            serviceScope.launch {
+
+                val locationService = LocationService()
+
+                locationService.addLocationToDatabase(Location(latitude, longitude, speed))
+
+            }
+
         }
 
 
-
     private fun start(_locationHelper: LocationHelper = Graph.locationHelper) {
-        _locationHelper.startLocationUpdates(_tarea)
+        _locationHelper.startLocationUpdates(this, _tarea)
         /*serviceScope.launch {
 
             _locationHelper.startLocationUpdates()

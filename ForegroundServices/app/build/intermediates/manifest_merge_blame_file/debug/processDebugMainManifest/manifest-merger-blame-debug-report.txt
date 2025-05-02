@@ -82,8 +82,8 @@
 47
 48        <service
 48-->H:\Repos\AndroidKotlinDemos\ForegroundServices\app\src\main\AndroidManifest.xml:31:9-35:19
-49            android:name="com.demo.foregroundservices.backgroundservice.BackService"
-49-->H:\Repos\AndroidKotlinDemos\ForegroundServices\app\src\main\AndroidManifest.xml:32:13-58
+49            android:name="com.demo.foregroundservices.backgroundservice.LocationForegroundService"
+49-->H:\Repos\AndroidKotlinDemos\ForegroundServices\app\src\main\AndroidManifest.xml:32:13-72
 50            android:exported="false"
 50-->H:\Repos\AndroidKotlinDemos\ForegroundServices\app\src\main\AndroidManifest.xml:34:13-37
 51            android:foregroundServiceType="location" >

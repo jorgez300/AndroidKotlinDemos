@@ -21,7 +21,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.demo.foregroundservices.backgroundservice.BackService
+import com.demo.foregroundservices.backgroundservice.LocationForegroundService
 import com.demo.foregroundservices.core.LocationHelper
 import com.demo.foregroundservices.core.PermisosHelper
 import com.demo.foregroundservices.ui.theme.ForegroundServicesTheme
@@ -93,15 +93,15 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier, Context: Context, _locationHelper: LocationHelper = Graph.locationHelper) {
+fun Greeting(name: String, modifier: Modifier = Modifier, context: Context, locationHelper: LocationHelper = Graph.locationHelper) {
 
     Column {
         Spacer(modifier = Modifier.height(8.dp))
         Spacer(modifier = Modifier.height(8.dp))
         Button(onClick = {
             val serviceIntent =
-                Intent(Context, BackService::class.java).apply { action = "MONITOREO_START" }
-            Context.startForegroundService(serviceIntent)
+                Intent(context, LocationForegroundService::class.java).apply { action = "MONITOREO_START" }
+            context.startForegroundService(serviceIntent)
 
 
         }) {
@@ -111,8 +111,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier, Context: Context, _loc
         Spacer(modifier = Modifier.height(8.dp))
         Button(onClick = {
             val serviceIntent =
-                Intent(Context, BackService::class.java).apply { action = "MONITOREO_STOP" }
-            Context.startForegroundService(serviceIntent)
+                Intent(context, LocationForegroundService::class.java).apply { action = "MONITOREO_STOP" }
+            context.startForegroundService(serviceIntent)
 
 
         }) {
@@ -122,14 +122,14 @@ fun Greeting(name: String, modifier: Modifier = Modifier, Context: Context, _loc
         Spacer(modifier = Modifier.height(8.dp))
         Button(onClick = {
 
-            _locationHelper.startLocationUpdates()
+            locationHelper.startLocationUpdates(context)
         }) {
             Text("Inicia GPS")
         }
         Spacer(modifier = Modifier.height(8.dp))
         Spacer(modifier = Modifier.height(8.dp))
         Button(onClick = {
-            _locationHelper.stopLocationUpdates()
+            locationHelper.stopLocationUpdates()
         }) {
             Text("Detiene GPS")
         }

@@ -184,14 +184,14 @@ category#android.intent.category.LAUNCHER
 ADDED from H:\Repos\AndroidKotlinDemos\ForegroundServices\app\src\main\AndroidManifest.xml:28:17-77
 	android:name
 		ADDED from H:\Repos\AndroidKotlinDemos\ForegroundServices\app\src\main\AndroidManifest.xml:28:27-74
-service#com.demo.foregroundservices.backgroundservice.BackService
+service#com.demo.foregroundservices.backgroundservice.LocationForegroundService
 ADDED from H:\Repos\AndroidKotlinDemos\ForegroundServices\app\src\main\AndroidManifest.xml:31:9-35:19
 	android:exported
 		ADDED from H:\Repos\AndroidKotlinDemos\ForegroundServices\app\src\main\AndroidManifest.xml:34:13-37
 	android:foregroundServiceType
 		ADDED from H:\Repos\AndroidKotlinDemos\ForegroundServices\app\src\main\AndroidManifest.xml:33:13-53
 	android:name
-		ADDED from H:\Repos\AndroidKotlinDemos\ForegroundServices\app\src\main\AndroidManifest.xml:32:13-58
+		ADDED from H:\Repos\AndroidKotlinDemos\ForegroundServices\app\src\main\AndroidManifest.xml:32:13-72
 uses-sdk
 INJECTED from H:\Repos\AndroidKotlinDemos\ForegroundServices\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from H:\Repos\AndroidKotlinDemos\ForegroundServices\app\src\main\AndroidManifest.xml

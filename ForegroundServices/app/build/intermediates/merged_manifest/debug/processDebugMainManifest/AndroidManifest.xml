@@ -46,7 +46,7 @@
         </activity>
 
         <service
-            android:name="com.demo.foregroundservices.backgroundservice.BackService"
+            android:name="com.demo.foregroundservices.backgroundservice.LocationForegroundService"
             android:exported="false"
             android:foregroundServiceType="location" >
         </service>
