@@ -1,4 +1,4 @@
 package com.demo.multiapp.app1
 
-object Constantes {
+object App1Graph {
 }

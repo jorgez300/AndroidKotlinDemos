@@ -13,7 +13,7 @@ import androidx.navigation.NavController
 import com.demo.multiapp.navigation.*
 
 @Composable
-fun LoginScreen(navController: NavController,) {
+fun LoginScreen(navController: NavController) {
 
     val TAG = "LoginScreen"
 

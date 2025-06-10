@@ -2,7 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.jetbrainsKotlinSerialization)
+
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.ksp)
 }
 
@@ -59,20 +61,11 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation(libs.kotlinx.serialization.json)
+    implementation (libs.kotlinx.serialization.json)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation(libs.logging.interceptor)
-    implementation(libs.androidx.material.icons.core)
-    implementation(libs.androidx.material.icons.extended)
-    implementation(libs.play.services.auth)
-    implementation(libs.play.services.auth.api.phone)
-    implementation(libs.androidx.work.runtime.ktx)
 
-
-    // Dependencias de Room
-    implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx)
+    implementation (libs.androidx.room.runtime)
+    implementation (libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
+    implementation(libs.play.services.location)
 }
