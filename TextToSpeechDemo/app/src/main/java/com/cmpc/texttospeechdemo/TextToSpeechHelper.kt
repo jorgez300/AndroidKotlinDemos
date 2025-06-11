@@ -37,11 +37,29 @@ object TextToSpeechHelper {
 
     fun speak(text: String) {
         if (::textToSpeech.isInitialized) {
+            textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null, null)
+        } else {
+            AlertDialogHelper.showDialog("TextToSpeech no iniciado", "Llamar initialize() en Graph.provide() antes de usar Speak().")
+        }
+    }
+
+    fun forceSpeak(text: String) {
+        if (::textToSpeech.isInitialized) {
             textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
         } else {
             AlertDialogHelper.showDialog("TextToSpeech no iniciado", "Llamar initialize() en Graph.provide() antes de usar Speak().")
         }
     }
 
+    fun stop() {
+        if (::textToSpeech.isInitialized) {
+            textToSpeech.stop()
+        } else {
+            AlertDialogHelper.showDialog("TextToSpeech no iniciado", "Llamar initialize() en Graph.provide() antes de usar Speak().")
+        }
+    }
 
 }
+
+
+

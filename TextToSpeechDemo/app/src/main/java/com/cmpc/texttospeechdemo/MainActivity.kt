@@ -45,37 +45,17 @@ fun TextToSpeechScreen() {
 
         Button(onClick =
         {
-            TextToSpeechHelper.speak("Hola mundo, soy una aplicacion android")
+            TextToSpeechHelper.forceSpeak("Hola mundo, soy una aplicacion android")
         }) {
-            Text("Speak")
+            Text("Force Speak")
         }
 
         Button(onClick =
         {
-            TextToSpeechHelper.speak("Hola mundo, soy una aplicacion android")
+            TextToSpeechHelper.stop()
         }) {
-            Text("Speak")
+            Text("Stop")
         }
-        Button(onClick =
-        {
-            TextToSpeechHelper.speak("Hola mundo, soy una aplicacion android")
-        }) {
-            Text("Speak")
-        }
-        Button(onClick =
-        {
-            TextToSpeechHelper.speak("Hola mundo, soy una aplicacion android")
-        }) {
-            Text("Speak")
-        }
-
-        Button(onClick =
-        {
-            TextToSpeechHelper.speak("Hola mundo, soy una aplicacion android")
-        }) {
-            Text("Speak")
-        }
-
 
     }
 }
