@@ -35,12 +35,6 @@ class MainActivity : ComponentActivity() {
 fun TextToSpeechScreen() {
 
     Column(modifier = Modifier.padding(16.dp)) {
-        Button(onClick =
-        {
-            TextToSpeechHelper.speak("Hola mundo, soy una aplicacion android")
-        }) {
-            Text("Speak")
-        }
 
         Button(onClick =
         {
