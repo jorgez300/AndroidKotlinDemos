@@ -7,16 +7,13 @@ import android.provider.Settings
 
 object DebugValidatorHelper {
 
-
     fun ValidateDebugMode(ctx: Context, finish: () -> Nothing) {
 
         if (Constantes.AMBIENTE != "PRD") {
             return
         }
 
-
         if (isDebuggingEnabled(ctx) || isDebuggerAttached()) {
-
             AlertDialog.Builder(ctx)
                 .setTitle("Modo Depuración Detectado")
                 .setMessage("No puedes ejecutar esta aplicación con el modo depuración activado.")
@@ -25,10 +22,7 @@ object DebugValidatorHelper {
                 }
                 .setCancelable(false)
                 .show()
-
         }
-
-
     }
 
     fun isDebuggingEnabled(context: Context): Boolean {
@@ -39,11 +33,8 @@ object DebugValidatorHelper {
         ) != 0
     }
 
-
     fun isDebuggerAttached(): Boolean {
         return android.os.Debug.isDebuggerConnected() || android.os.Debug.waitingForDebugger()
     }
-
-
 
 }
