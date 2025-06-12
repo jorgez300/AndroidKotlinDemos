@@ -8,12 +8,12 @@ import android.content.Intent
 import android.os.IBinder
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import com.demo.foregroundservices.Graph
-import com.demo.foregroundservices.MainActivity
-import com.demo.foregroundservices.R
-import com.demo.foregroundservices.core.LocationHelper
-import com.demo.foregroundservices.model.Location
-import com.demo.foregroundservices.service.LocationService
+import com.demo.multiapp.MainActivity
+import com.demo.multiapp.R
+import com.demo.multiapp.comun.ComunGraph
+import com.demo.multiapp.comun.domain.model.Location
+import com.demo.multiapp.comun.domain.service.LocationService
+import com.demo.multiapp.comun.helper.LocationHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -77,7 +77,7 @@ class LocationForegroundService : Service() {
         }
 
 
-    private fun start(_locationHelper: LocationHelper = Graph.locationHelper) {
+    private fun start(_locationHelper: LocationHelper = ComunGraph.locationHelper) {
         _locationHelper.startLocationUpdates(this, _tarea)
         /*serviceScope.launch {
 
@@ -106,7 +106,7 @@ class LocationForegroundService : Service() {
     }
 
 
-    private fun stop(_locationHelper: LocationHelper = Graph.locationHelper) {
+    private fun stop(_locationHelper: LocationHelper = ComunGraph.locationHelper) {
         _locationHelper.stopLocationUpdates()
         notificationManager.cancelAll()
         stopForeground(STOP_FOREGROUND_REMOVE)

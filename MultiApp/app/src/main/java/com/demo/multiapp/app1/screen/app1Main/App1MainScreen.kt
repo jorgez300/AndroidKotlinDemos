@@ -10,13 +10,13 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
 @Composable
-fun App1MainScreen(navController: NavController, patente: String? = "") {
+fun App1MainScreen() {
 
     Column(){
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Text("App1MainScreen:  $patente")
+        Text("App1MainScreen: ")
 
         Spacer(modifier = Modifier.height(5.dp))
 

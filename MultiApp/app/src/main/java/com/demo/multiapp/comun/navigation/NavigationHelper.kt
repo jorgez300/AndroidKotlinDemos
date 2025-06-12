@@ -9,6 +9,7 @@ import androidx.navigation.navArgument
 import com.demo.multiapp.MainActivity
 import com.demo.multiapp.app1.screen.app1Main.App1MainScreen
 import com.demo.multiapp.app2.screen.app2main.App2MainScreen
+import com.demo.multiapp.comun.ComunGraph
 import com.demo.multiapp.comun.screen.login.LoginScreen
 
 
@@ -17,48 +18,21 @@ fun NavigationHelper(
     mainActivity: MainActivity,
     paddingValues: androidx.compose.foundation.layout.PaddingValues
 ) {
-    val navController = rememberNavController()
+    ComunGraph.navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = Login) {
+    NavHost(navController = ComunGraph.navController, startDestination = Login) {
 
-        // Ruta para App1 con argumento patente
-        composable(
-            route = "App1MainScreen/{patente}",
-            arguments = listOf(navArgument("patente") {
-                type = androidx.navigation.NavType.StringType
-            })
-        ) { backStackEntry ->
-            App1MainScreen(
-                navController = navController,
-                patente = backStackEntry.arguments?.getString("patente")
-            )
+        composable<App1Main> {
+            App1MainScreen()
         }
 
-        // Ruta para App2 con argumento patente
-        /*composable(
-            route = "${App2Main}/{patente}",
-            arguments = listOf(navArgument("patente") {
-                type = androidx.navigation.NavType.StringType
-            })
-        ) { backStackEntry ->
-            App2MainScreen(
-                navController = navController,
-                patente = backStackEntry.arguments?.getString("patente")
-            )
-        }*/
-
-
-        /*composable<App1Main> {
-            App1MainScreen(navController = navController)
-        }*/
-
         composable<App2Main> {
-            App2MainScreen(navController = navController)
+            App2MainScreen()
         }
 
         // Ruta para la pantalla inicial que luego derivara segun corresponda
         composable<Login> {
-            LoginScreen(navController = navController)
+            LoginScreen()
         }
     }
 }

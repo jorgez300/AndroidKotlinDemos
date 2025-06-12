@@ -1,6 +1,7 @@
 package com.demo.multiapp.comun
 
 import android.content.Context
+import androidx.navigation.NavHostController
 import androidx.room.Room
 import com.demo.multiapp.comun.database.ComunDatabase
 import com.demo.multiapp.comun.database.repository.LocationRepository
@@ -10,6 +11,8 @@ object ComunGraph {
 
     lateinit var locationHelper: LocationHelper;
     lateinit var appDatabase: ComunDatabase;
+
+    lateinit var navController: NavHostController
 
     val locationRepository by lazy {
         LocationRepository(appDatabase.locationDao())
@@ -22,4 +25,5 @@ object ComunGraph {
 
         locationHelper = LocationHelper()
     }
+
 }

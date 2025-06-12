@@ -1,7 +1,7 @@
 package com.demo.multiapp.comun.database.repository
 
-import com.demo.foregroundservices.database.dao.LocationDao
-import com.demo.foregroundservices.database.entity.LocationEntity
+import com.demo.multiapp.comun.database.dao.LocationDao
+import com.demo.multiapp.comun.database.entity.LocationEntity
 import kotlinx.coroutines.flow.Flow
 
 class LocationRepository(private val locationDao: LocationDao) {

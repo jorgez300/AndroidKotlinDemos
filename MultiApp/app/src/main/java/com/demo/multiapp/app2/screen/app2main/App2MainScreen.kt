@@ -10,7 +10,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
 @Composable
-fun App2MainScreen(navController: NavController, patente: String? = "") {
+fun App2MainScreen() {
 
     Column(){
 
